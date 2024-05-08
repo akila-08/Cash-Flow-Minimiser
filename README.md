@@ -1,0 +1,1 @@
+This project is an advanced data structure project that addresses the optimization of cash flow within a group of individuals or entities. It aims to develop a robust software application to efficiently minimise the net cash flow among participants in a financial network using graph datastructure.
