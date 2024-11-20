@@ -109,7 +109,7 @@ void printAns(vector<vector<pair<int,string>>> ansGraph, int numBanks,bank input
 
 void minimizeCashFlow(int numBanks,bank input[],unordered_map<string,int>& indexOf,int numTransactions,vector<vector<int>>& graph,int maxNumTypes){
 
-    //Find net amount of each bank has
+    //Find net amount of each bank 
     bank listOfNetAmounts[numBanks];
 
     for(int b=0;b<numBanks;b++){
@@ -118,7 +118,7 @@ void minimizeCashFlow(int numBanks,bank input[],unordered_map<string,int>& index
 
         int amount = 0;
         //incoming edges
-        //column travers
+        //column traverse
         for(int i=0;i<numBanks;i++){
             amount += (graph[i][b]);
         }
@@ -182,10 +182,9 @@ void minimizeCashFlow(int numBanks,bank input[],unordered_map<string,int>& index
     }
 
     printAns(ansGraph,numBanks,input);
-    // cout<<"HI\n";
 }
 
-//correct
+
 int main()
 {
     cout<<"\n\t\t\t\t///////////////////// WELCOME TO PSG  CASH FLOW MINIMIZER SYSTEM \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\n\n";
@@ -243,57 +242,7 @@ int main()
 
         graph[indexOf[s1]][indexOf[s2]] = amount;
     }
-
-    //settle
     system("CLS");
     minimizeCashFlow(numBanks,input,indexOf,numTransactions,graph,maxNumTypes);
     return 0;
 }
-
-
-/*
-5
-A 2 t1 t2
-B 1 t1
-C 1 t1
-D 1 t2
-E 1 t2
-4
-B A 300
-C A 700
-D B 500
-E B 500
-
---------
-5
-World_Bank 2 Google_Pay PayTM
-Bank_B 1 Google_Pay
-Bank_C 1 Google_Pay
-Bank_D 1 PayTM
-Bank_E 1 PayTM
-4
-Bank_B World_Bank 300
-Bank_C World_Bank 700
-Bank_D Bank_B 500
-Bank_E Bank_B 500
-
---------------------
-
-6
-B 3 1 2 3
-C 2 1 2
-D 1 2
-E 2 1 3
-F 1 3
-G 2 2 3
-9
-G B 30
-G D 10
-F B 10
-F C 30
-F D 10
-F E 10
-B C 40
-C D 20
-D E 50
-*/
